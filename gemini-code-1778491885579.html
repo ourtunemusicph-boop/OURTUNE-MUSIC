@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourtune Music PH | Independent Record Label</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Premium Minimalist Dark Theme */
+        :root {
+            --bg-primary: #040405;
+            --bg-secondary: #0a0a0c;
+            --accent-premium: #d4af37; /* Warm Gold */
+            --text-main: #ffffff;
+            --text-muted: #88888e;
+            --card-border: rgba(255, 255, 255, 0.03);
+            --glow-purple: rgba(138, 43, 226, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            letter-spacing: 0.03em;
+        }
+
+        /* Glassmorphism Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(4, 4, 5, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-premium) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--accent-premium);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 75vh;
+            padding: 0 20px;
+            background: radial-gradient(circle at 50% 40%, var(--glow-purple) 0%, var(--bg-primary) 65%);
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 850px;
+        }
+
+        .hero h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--accent-premium);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4.8rem;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #ffffff 60%, rgba(255, 255, 255, 0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 45px;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            padding: 18px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid var(--text-main);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--accent-premium);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        /* Sections Layout */
+        section {
+            padding: 100px 8% 80px 8%;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+            text-align: left;
+        }
+
+        .section-header p {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--accent-premium);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Bento Grid Artist Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 0;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+            filter: grayscale(10%);
+        }
+
+        .card:hover .card-img {
+            transform: scale(1.06);
+            filter: grayscale(0%);
+        }
+
+        /* Cinematic Gradient Overlay */
+        .card-img-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent 30%, rgba(10, 10, 12, 0.98));
+            pointer-events: none;
+        }
+
+        .card-content {
+            padding: 30px;
+            background-color: var(--bg-secondary);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .card-subtitle {
+            color: var(--accent-premium);
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .artist-description {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .releases-list {
+            list-style: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .releases-list li {
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .releases-list span {
+            color: var(--text-muted);
+            font-weight: 300;
+            display: block;
+            font-size: 0.75rem;
+            margin-top: 2px;
+        }
+
+        /* Action Buttons */
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .play-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-main);
+            color: #000;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 14px 20px;
+            border-radius: 0;
+            border: 1px solid var(--text-main);
+            transition: all 0.4s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+
+        .play-btn:hover {
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--accent-premium);
+        }
+
+        .profile-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 0;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .profile-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Modal Overlay for Music Players */
+        .player-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(4, 4, 5, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .player-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--text-main);
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-header h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .modal-header p {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent-premium);
+            letter-spacing: 2px;
+        }
+
+        /* Demo Submission Section */
+        .demo-section {
+            background: radial-gradient(circle at 50% 100%, rgba(212, 175, 55, 0.08) 0%, var(--bg-primary) 70%);
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 140px 8%;
+        }
+
+        .demo-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .demo-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 3px;
+        }
+
+        .demo-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 45px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .demo-btn {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1.5px solid var(--accent-premium);
+            padding: 20px 50px;
+            border-radius: 0;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .demo-btn:hover {
+            background-color: var(--accent-premium);
+            color: #000;
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+            transform: translateY(-3px);
+        }
+
+        /* --- NEW FORM PAGE STYLING --- */
+        #demoPage {
+            display: none;
+            min-height: 90vh;
+            padding: 80px 8%;
+            background: radial-gradient(circle at 50% 30%, var(--glow-purple) 0%, var(--bg-primary) 70%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--card-border);
+            padding: 50px 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .form-container h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .form-container p.form-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-premium);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            color: var(--text-main);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-premium);
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Drag & Drop Area */
+        .audio-upload-wrapper {
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .audio-upload-wrapper:hover, .audio-upload-wrapper.dragover {
+            border-color: var(--accent-premium);
+            background-color: rgba(212, 175, 55, 0.02);
+        }
+
+        .audio-upload-wrapper svg {
+            fill: var(--text-muted);
+            width: 40px;
+            height: 40px;
+            margin-bottom: 15px;
+            transition: fill 0.3s;
+        }
+
+        .audio-upload-wrapper:hover svg {
+            fill: var(--accent-premium);
+        }
+
+        .audio-upload-wrapper p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .audio-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-list-preview {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: var(--accent-premium);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Form Actions */
+        .form-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .submit-btn {
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            border: 1.5px solid var(--text-main);
+            padding: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--accent-premium);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: var(--text-muted);
+        }
+
+        .back-btn {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--text-main);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Luxury Footer */
+        footer {
+            background-color: #020203;
+            padding: 60px 8% 40px 8%;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+            color: #55555c;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            font-weight: 400;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo" onclick="showLandingPage()">OURTUNE MUSIC PH</div>
+        <nav>
+            <a href="#artists" onclick="showLandingPage()">Artists</a>
+            <a href="#demo" onclick="showLandingPage()">Submissions</a>
+        </nav>
+    </header>
+
+    <div id="mainPage">
+        <section class="hero">
+            <div class="hero-content">
+                <h4>An Independent Sound Collective</h4>
+                <h1>Shaping the Sound<br>of Tomorrow</h1>
+                <p>We build organic, sustainable environments designed entirely around original songwriting, pristine audio curation, and native distribution.</p>
+                <div class="cta-group">
+                    <a href="#artists" class="cta-btn">Explore Roster</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="artists">
+            <div class="section-header">
+                <p>Creative Roster</p>
+                <h2>The Artists</h2>
+            </div>
+            
+            <div class="grid">
+                
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <div class="card-img" style="background-image: url('517186731_24496345973305109_7993460944512315059_n.jpg');"></div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">Trisha Francisco</h3>
+                            <p class="card-subtitle">Acoustic / Indie-Pop</p>
+                            <p class="artist-description">A rising Filipina singer-songwriter who delivers soulful, acoustic, and indie-pop vibes. She is known for her smooth vocals and evocative, storytelling lyrics.</p>
+                            
+                            <ul class="releases-list">
+                                <li>"Kape" (2025) <span>A warm, acoustic-driven single reflecting on comfort and quiet moments.</span></li>
+                                <li>"Dandansoy (Rendition)" (2024) <span>A beautiful, modern take on the classic Visayan folk song.</span></li>
+                                <li>"Lumpia" (2023) <span>A playful yet relatable indie release.</span></li>
+                            </ul>
+                        </div>
+                        <div class="card-actions">
+                            <button class="play-btn" onclick="openPlayer('Trisha Francisco', 'Acoustic / Indie-Pop', 'https://open.spotify.com/artist/78TikbgmfY9BLnPVqjBpPV?si=zW3M6V88Q66n2jpfIFMR0w')">Listen to Music</button>
+                            <a href="https://open.spotify.com/artist/78TikbgmfY9BLnPVqjBpPV?si=zW3M6V88Q66n2jpfIFMR0w" target="_blank" class="profile-btn">View Artist Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <div class="card-img" style="background-image: url('472839103_1746158372901596_265366969152408487_n.jpg');"></div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">Chillinwithsanti</h3>
+                            <p class="card-subtitle">Chill-Hop / Lo-Fi / Indie Pop</p>
+                            <p class="artist-description">An independent OPM (Original Pilipino Music) artist who blends elements of chill-hop, lo-fi, and indie pop. His music is deeply atmospheric, focusing heavily on themes of nostalgia, romance, and late-night thoughts.</p>
+                            
+                            <ul class="releases-list">
+                                <li>"UNSPOKEN" (feat. Rizen, 2026) <span>A moody, collaborative chill track.</span></li>
+                                <li>"Limerence" (feat. Rizen, 2025) <span>An ambient, romantic lo-fi single.</span></li>
+                                <li>"Pahimakas" & "Aurora" (2025) <span>Deep atmospheric, collaborative releases.</span></li>
+                            </ul>
+                        </div>
+                        <div class="card-actions">
+                            <button class="play-btn" onclick="openPlayer('Chillinwithsanti', 'Chill-Hop / Lo-Fi / Indie Pop', 'https://open.spotify.com/artist/1Dv95EnYsYcRg13AMko2VJ?si=7Q6RMzKnT4OqekkTt1cQOg')">Listen to Music</button>
+                            <a href="https://open.spotify.com/artist/1Dv95EnYsYcRg13AMko2VJ?si=7Q6RMzKnT4OqekkTt1cQOg" target="_blank" class="profile-btn">View Artist Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <div class="card-img" style="background-image: url('ab6761610000e5eb92535be222bf3ee26637213f.jpg');"></div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">MarcMontilla</h3>
+                            <p class="card-subtitle">Electronic / Ambient / Synth-Pop</p>
+                            <p class="artist-description">An independent music producer and artist who crafts melodic electronic, ambient, and synth-pop soundscapes. His work focuses on creating rich instrumental textures and emotional, late-night driving beats.</p>
+                            
+                            <ul class="releases-list">
+                                <li>"Night Into Days" (2024) <span>A melodic, synth-heavy single showcasing his electronic production style.</span></li>
+                            </ul>
+                        </div>
+                        <div class="card-actions">
+                            <button class="play-btn" onclick="openPlayer('MarcMontilla', 'Electronic / Ambient', 'https://open.spotify.com/artist/3fLEtjJ4DdpsVjxCJ2f2xL?si=1G6eAIabQVybxeheXJnzPA')">Listen to Music</button>
+                            <a href="https://open.spotify.com/artist/3fLEtjJ4DdpsVjxCJ2f2xL?si=1G6eAIabQVybxeheXJnzPA" target="_blank" class="profile-btn">View Artist Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img-wrapper">
+                        <div class="card-img" style="background-image: url('ab6761610000e5ebeee6730032c6004297efaf61.jpg');"></div>
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <h3 class="card-title">JunOpisyal</h3>
+                            <p class="card-subtitle">Electropop / Alternative Indie</p>
+                            <p class="artist-description">An innovative OPM artist crafting cinematic soundscapes. His projects traverse high-energy electropop rhythms, atmospheric alternative styles, and breezy, organic acoustic movements.</p>
+                            
+                            <ul class="releases-list">
+                                <li>"All out of love" (2024) <span>An upbeat electropop track with bittersweet, rhythmically driving melodies.</span></li>
+                                <li>"Slow Dance" (2024) <span>An immersive, dreamlike release framing intimate quiet moments.</span></li>
+                                <li>"Flying Away" (2025) <span>A bright, relaxed Bossa Nova acoustic track.</span></li>
+                            </ul>
+                        </div>
+                        <div class="card-actions">
+                            <button class="play-btn" onclick="openPlayer('JunOpisyal', 'Electropop / Alternative Indie', 'https://open.spotify.com/artist/10yve5k3m10oJn6SvslX7W?si=UOEnzpAnSRuPnhs_iQVisQ')">Listen to Music</button>
+                            <a href="https://open.spotify.com/artist/10yve5k3m10oJn6SvslX7W?si=UOEnzpAnSRuPnhs_iQVisQ" target="_blank" class="profile-btn">View Artist Profile</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="demo" class="demo-section">
+            <div class="demo-content">
+                <h2>Join the Roster</h2>
+                <p>Ourtune Music PH champions original storytellers. If you are an independent music artist writing forward-thinking compositions in the R&B, Pop, or Alternative acoustic space, submit your material to our team.</p>
+                <div class="demo-btn" onclick="showDemoPage()">
+                    Send Demo Materials
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="demoPage">
+        <div class="form-container">
+            <h2>Demo Submission</h2>
+            <p class="form-subtitle">Share your unique sound with the team at Ourtune Music PH.</p>
+            
+            <form id="demoSubmissionForm" action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST" enctype="multipart/form-data" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="artistName">Artist Name / Full Name</label>
+                    <input type="text" name="artist_name" id="artistName" required placeholder="e.g., Jane Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="artistEmail">Email Address</label>
+                    <input type="email" name="_replyto" id="artistEmail" required placeholder="e.g., janedoe@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="artistPhone">Phone Number</label>
+                    <input type="tel" name="phone_number" id="artistPhone" required placeholder="e.g., +63 917 123 4567">
+                </div>
+                
+                <div class="form-group">
+                    <label>Upload Audio Demo</label>
+                    <div class="audio-upload-wrapper" id="dropzone">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+                        </svg>
+                        <p>Drag & drop your audio demo here or <strong>browse files</strong></p>
+                        <input type="file" name="demo_audio" id="audioFile" required onchange="displayFileName()">
+                    </div>
+                    <div id="filePreview" class="file-list-preview"></div>
+                </div>
+
+                <input type="text" name="_subject" value="New Demo Submission - Ourtune Music" style="display:none;">
+
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="submit-btn">Submit Audition</button>
+                    <button type="button" class="back-btn" onclick="showLandingPage()">Back to Home</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="playerModal" class="player-modal" onclick="closePlayerOnOverlay(event)">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closePlayer()">×</button>
+            <div class="modal-header">
+                <h3 id="modalArtistName">Artist Name</h3>
+                <p id="modalArtistGenre">Genre</p>
+            </div>
+            <div style="border-radius: 0; overflow: hidden; height: 352px;">
+                <iframe id="spotifyIframe" style="border-radius: 0;" src="" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 OURTUNE MUSIC PH. All Rights Reserved.</p>
+        <p style="font-size: 0.65rem; color: #3e3e44; text-transform: uppercase; letter-spacing: 2px;">Curation. Independence. Visionary Sound.</p>
+    </footer>
+
+    <script>
+        /* Player Modal Actions */
+        function openPlayer(artistName, genre, spotifyUrl) {
+            document.getElementById('modalArtistName').innerText = artistName;
+            document.getElementById('modalArtistGenre').innerText = genre;
+            document.getElementById('spotifyIframe').src = spotifyUrl;
+            
+            const modal = document.getElementById('playerModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+        }
+
+        function closePlayer() {
+            const modal = document.getElementById('playerModal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.getElementById('spotifyIframe').src = "";
+            }, 400);
+        }
+
+        function closePlayerOnOverlay(event) {
+            if (event.target.id === 'playerModal') {
+                closePlayer();
+            }
+        }
+
+        /* Navigation Functions */
+        function showDemoPage() {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('demoPage').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showLandingPage() {
+            document.getElementById('demoPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        }
+
+        function displayFileName() {
+            const fileInput = document.getElementById('audioFile');
+            const filePreview = document.getElementById('filePreview');
+            if (fileInput.files.length > 0) {
+                filePreview.textContent = `Selected Track: ${fileInput.files[0].name}`;
+            } else {
+                filePreview.textContent = "";
+            }
+        }
+
+        /* Drag & Drop Visual cues */
+        const dropzone = document.getElementById('dropzone');
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropzone.classList.add('dragover');
+            }, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, (e) => {
+                e.preventDefault();
+                dropzone.classList.remove('dragover');
+            }, false);
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            document.getElementById('audioFile').files = files;
+            displayFileName();
+        });
+
+        /* Handle Formspree AJAX Submission */
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('demoSubmissionForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const artistName = document.getElementById('artistName').value;
+            
+            // Check if action ID is still default
+            if (form.getAttribute('action').includes('YOUR_FORMSPREE_FORM_ID')) {
+                alert("Please configure your Formspree Form ID in the HTML file's code before submitting.");
+                return;
+            }
+
+            // Show loading status
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending Demo...";
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert(`Thank you, ${artistName}! Your demo has been successfully sent to ourtunemusicph@gmail.com.`);
+                    form.reset();
+                    document.getElementById('filePreview').textContent = "";
+                    showLandingPage();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert("Submission failed: " + data.errors.map(error => error.message).join(", "));
+                    } else {
+                        alert("Oops! There was a problem submitting your form. Please try again.");
+                    }
+                }
+            } catch (error) {
+                alert("There was an error connecting to the delivery server. Please check your network connection.");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Submit Audition";
+            }
+        }
+    </script>
+
+</body>
+</html>
