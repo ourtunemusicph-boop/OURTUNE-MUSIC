@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ourtune Music | Independent Record Label</title>
+    <style>
+        /* Modern Dark Theme Styling */
+        :root {
+            --bg-primary: #0b0b0c;
+            --bg-secondary: #131316;
+            --accent-color: #1DB954; /* Spotify Green */
+            --accent-purple: #8a2be2; /* Electric Purple */
+            --text-main: #ffffff;
+            --text-muted: #a0a0a5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: rgba(11, 11, 12, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1f1f23;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, var(--text-main), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at center, #1b122c 0%, var(--bg-primary) 70%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: var(--text-main);
+            color: var(--bg-primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background-color: var(--accent-purple);
+            color: white;
+        }
+
+        /* Section Global Layout */
+        section {
+            padding: 80px 8% 40px 8%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 15px;
+        }
+
+        /* Artists Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #1f1f23;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-purple);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 280px;
+            background-color: #242428;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #3e3e44;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Platform Button Links */
+        .platform-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #121214;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #2d2d34;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .platform-btn:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #000;
+        }
+
+        /* Releases Section */
+        .releases-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .releases-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .spotify-widget {
+            background: #18181c;
+            border-radius: 12px;
+            padding: 10px;
+            border: 1px solid #2d2d34;
+        }
+
+        footer {
+            background-color: #060607;
+            padding: 40px 8%;
+            text-align: center;
+            border-top: 1px solid #1f1f23;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">OURTUNE MUSIC</div>
+        <nav>
+            <a href="#artists">Artists</a>
+            <a href="#releases">Releases</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Shaping the Sound of Tomorrow</h1>
+        <p>An independent collective of visionary artists pushing the boundaries of R&B, Pop, and Alternative Indie.</p>
+        <a href="#releases" class="cta-btn">Listen Now</a>
+    </section>
+
+    <section id="artists">
+        <h2>Our Artists</h2>
+        <div class="grid">
+            
+            <div class="card">
+                <div class="card-img">🎤</div>
+                <div class="card-content">
+                    <h3 class="card-title">Delquero</h3>
+                    <p class="card-subtitle">R&B / Pop Artist</p>
+                    <a href="https://open.spotify.com/artist/78TikbgmfY9BLnPVqjBpPV?si=j1oV-xQHT1q-6U9j834isg" target="_blank" class="platform-btn">
+                        Listen on Spotify
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">🎵</div>
+                <div class="card-content">
+                    <h3 class="card-title">Trisha Francisco</h3>
+                    <p class="card-subtitle">Alternative Folk / Indie</p>
+                    <a href="https://open.spotify.com/artist/1Dv95EnYsYcRg13AMko2VJ?si=SqbpfkWARGy2VUBG04yJDw" target="_blank" class="platform-btn">
+                        Listen on Spotify
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img">🎧</div>
+                <div class="card-content">
+                    <h3 class="card-title">Chillinwithsanti</h3>
+                    <p class="card-subtitle">Lofi Hip Hop / Chill</p>
+                    <a href="https://open.spotify.com/artist/10yve5k3m10oJn6SvslX7W?si=IUvL-2efRACUYeCG5t_qFg" target="_blank" class="platform-btn">
+                        Listen on Spotify
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="releases">
+        <h2>Popular Releases</h2>
+        <div class="releases-container">
+            
+            <div style="display: flex; flex-direction: column; justify-content: center;">
+                <h3>Stream Our Latest Singles</h3>
+                <p style="color: var(--text-muted); margin: 15px 0 25px 0;">
+                    Keep up with the newest sounds coming out of our studio. Hit play on the official players to support our independent roster directly on Spotify.
+                </p>
+                <div>
+                    <a href="https://open.spotify.com/artist/3fLEtjJ4DdpsVjxCJ2f2xL?si=oKh70tkqTASPSGoMIt7Tag" target="_blank" class="cta-btn" style="background-color: var(--accent-color); color: #000;">Open Spotify Playlist</a>
+                </div>
+            </div>
+
+            <div class="spotify-widget">
+                <iframe style="border-radius:12px" 
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGmwo6XG?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" style="background-color: var(--bg-secondary); border-top: 1px solid #1f1f23; text-align: center;">
+        <h2 style="border-left: none; padding-left: 0;">About Ourtune Music</h2>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+            Ourtune Music is an independent record label dedicated to championing passionate, original storytellers. We build ecosystems where music artists retain their creative spark and reach global audiences natively.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ourtune Music. All Rights Reserved.</p>
+        <p style="font-size: 0.75rem; color: #555;">Designed for Independent Music Creators.</p>
+    </footer>
+
+</body>
+</html>
